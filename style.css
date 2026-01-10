@@ -8,6 +8,15 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
+body.dark-mode {
+    --primary-color: #58a6ff;
+    --secondary-color: #f7b731;
+    --background-color: #1c2128;
+    --text-color: #c9d1d9;
+    --card-background: #2d333b;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--background-color);
@@ -16,10 +25,11 @@ body {
     display: grid;
     place-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(45deg, #f0f4f8 25%, transparent 25%),
-                      linear-gradient(-45deg, #f0f4f8 25%, transparent 25%),
-                      linear-gradient(45deg, transparent 75%, #f0f4f8 75%),
-                      linear-gradient(-45deg, transparent 75%, #f0f4f8 75%);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-image: linear-gradient(45deg, var(--background-color) 25%, transparent 25%),
+                      linear-gradient(-45deg, var(--background-color) 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, var(--background-color) 75%),
+                      linear-gradient(-45deg, transparent 75%, var(--background-color) 75%);
     background-size: 20px 20px;
 }
 
@@ -57,6 +67,29 @@ p {
 
 #generator-button:active {
     transform: scale(0.98);
+}
+
+.theme-switcher {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
 }
 
 destination-card {

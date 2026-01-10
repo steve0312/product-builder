@@ -44,3 +44,29 @@ document.getElementById('generator-button').addEventListener('click', () => {
     const randomDestination = destinations[randomIndex];
     destinationCard.updateContent(randomDestination);
 });
+
+// Theme switcher logic
+const themeToggleButton = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Function to apply the theme
+const applyTheme = (theme) => {
+    if (theme === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggleButton.textContent = '☀️';
+    } else {
+        body.classList.remove('dark-mode');
+        themeToggleButton.textContent = '🌙';
+    }
+};
+
+// Check for saved theme on load
+const savedTheme = localStorage.getItem('theme') || 'light';
+applyTheme(savedTheme);
+
+// Event listener for the toggle button
+themeToggleButton.addEventListener('click', () => {
+    let newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+});
