@@ -91,14 +91,3 @@ p {
     background-color: var(--text-color);
     color: var(--background-color);
 }
-
-destination-card {
-    display: block;
-    margin-top: 2rem;
-    background-color: var(--card-background);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px var(--shadow-color);
-    padding: 0;
-    max-width: 500px;
-    text-align: left;
-}

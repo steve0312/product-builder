@@ -1,29 +1,12 @@
 
 const destinations = [
-    { name: "Paris", country: "France", description: "The city of lights, known for its art, fashion, and culture." },
-    { name: "Kyoto", country: "Japan", description: "A city of ancient temples, beautiful gardens, and traditional geishas." },
-    { name: "Bora Bora", country: "French Polynesia", description: "A tropical paradise with crystal-clear waters and overwater bungalows." },
-    { name: "New York City", country: "USA", description: "The city that never sleeps, with iconic landmarks and endless entertainment." },
-    { name: "Rome", country: "Italy", description: "A city rich in history, with ancient ruins and world-renowned cuisine." },
-    { name: "Cairo", country: "Egypt", description: "Home to the pyramids and a vibrant culture." },
+    { name: "Paris", country: "France", description: "The city of lights, known for its art, fashion, and culture.", imageUrl: "https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { name: "Kyoto", country: "Japan", description: "A city of ancient temples, beautiful gardens, and traditional geishas.", imageUrl: "https://images.pexels.com/photos/161352/japan-kyoto-kinkaku-ji-golden-pavilion-161352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { name: "Bora Bora", country: "French Polynesia", description: "A tropical paradise with crystal-clear waters and overwater bungalows.", imageUrl: "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" },
+    { name: "New York City", country: "USA", description: "The city that never sleeps, with iconic landmarks and endless entertainment.", imageUrl: "https://images.pexels.com/photos/2422588/pexels-photo-2422588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { name: "Rome", country: "Italy", description: "A city rich in history, with ancient ruins and world-renowned cuisine.", imageUrl: "https://images.pexels.com/photos/1797161/pexels-photo-1797161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { name: "Cairo", country: "Egypt", description: "Home to the pyramids and a vibrant culture.", imageUrl: "https://images.pexels.com/photos/3958958/pexels-photo-3958958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
 ];
-
-// Replace with your Pexels API key
-const PEXELS_API_KEY = 'YOUR_PEXELS_API_KEY';
-
-async function getDestinationImage(destinationName) {
-    if (PEXELS_API_KEY === 'YOUR_PEXELS_API_KEY') {
-        console.error('Please replace YOUR_PEXELS_API_KEY with your actual Pexels API key.');
-        return 'https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'; // A default image
-    }
-    const response = await fetch(`https://api.pexels.com/v1/search?query=${destinationName}&per_page=1`, {
-        headers: {
-            Authorization: PEXELS_API_KEY
-        }
-    });
-    const data = await response.json();
-    return data.photos[0]?.src.large || 'https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
-}
 
 class DestinationCard extends HTMLElement {
     constructor() {
@@ -31,35 +14,56 @@ class DestinationCard extends HTMLElement {
         this.attachShadow({ mode: 'open' });
     }
 
-    updateContent(destination, imageUrl) {
+    updateContent(destination) {
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
                     display: block;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    position: relative;
+                    color: white;
+                    height: 250px;
+                    display: flex;
+                    align-items: flex-end;
                 }
-                img {
+                .card-background {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                     width: 100%;
-                    height: 200px;
-                    object-fit: cover;
-                    border-radius: 12px 12px 0 0;
+                    height: 100%;
+                    background-size: cover;
+                    background-position: center;
+                    transition: background-image 0.5s ease-in-out;
+                }
+                .card-background::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
                 }
                 .content {
-                    padding: 1rem;
+                    padding: 1.5rem;
+                    position: relative;
+                    z-index: 1;
                 }
                 h2 {
-                    color: var(--primary-color);
-                    margin-bottom: 0.5rem;
+                    margin: 0 0 0.5rem 0;
+                    font-size: 1.8rem;
                 }
                 p {
                     margin: 0;
+                    font-size: 1.1rem;
                 }
             </style>
-            <div>
-                <img src="${imageUrl}" alt="${destination.name}">
-                <div class="content">
-                    <h2>${destination.name}, ${destination.country}</h2>
-                    <p>${destination.description}</p>
-                </div>
+            <div class="card-background" style="background-image: url('${destination.imageUrl}')"></div>
+            <div class="content">
+                <h2>${destination.name}, ${destination.country}</h2>
+                <p>${destination.description}</p>
             </div>
         `;
     }
@@ -67,12 +71,11 @@ class DestinationCard extends HTMLElement {
 
 customElements.define('destination-card', DestinationCard);
 
-document.getElementById('generator-button').addEventListener('click', async () => {
+document.getElementById('generator-button').addEventListener('click', () => {
     const destinationCard = document.querySelector('destination-card');
     const randomIndex = Math.floor(Math.random() * destinations.length);
     const randomDestination = destinations[randomIndex];
-    const imageUrl = await getDestinationImage(randomDestination.name);
-    destinationCard.updateContent(randomDestination, imageUrl);
+    destinationCard.updateContent(randomDestination);
 });
 
 // Theme switcher logic
