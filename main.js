@@ -6,6 +6,20 @@ const destinations = [
     { name: "New York City", country: "USA", description: "The city that never sleeps, with iconic landmarks and endless entertainment.", imageUrl: "https://images.pexels.com/photos/2422588/pexels-photo-2422588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
     { name: "Rome", country: "Italy", description: "A city rich in history, with ancient ruins and world-renowned cuisine.", imageUrl: "https://images.pexels.com/photos/1797161/pexels-photo-1797161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
     { name: "Cairo", country: "Egypt", description: "Home to the pyramids and a vibrant culture.", imageUrl: "https://images.pexels.com/photos/3958958/pexels-photo-3958958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { name: "Seoul", country: "South Korea", description: "A vibrant city where modern technology meets ancient palaces.", imageUrl: "https://images.pexels.com/photos/2376712/pexels-photo-2376712.jpeg" },
+    { name: "London", country: "UK", description: "A historic city with iconic landmarks like the Tower of London and Buckingham Palace.", imageUrl: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg" },
+    { name: "Sydney", country: "Australia", description: "Famous for its harbourfront Sydney Opera House, with a distinctive sail-like design.", imageUrl: "https://images.pexels.com/photos/1878346/pexels-photo-1878346.jpeg" },
+    { name: "Rio de Janeiro", country: "Brazil", description: "Known for its sprawling favelas, Carnaval festival, and Christ the Redeemer statue.", imageUrl: "https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg" },
+    { name: "Moscow", country: "Russia", description: "Home to the Kremlin, Red Square, and St. Basil's Cathedral's colorful domes.", imageUrl: "https://images.pexels.com/photos/2363/moscow-russia-red-square-kremlin.jpg" },
+    { name: "Beijing", country: "China", description: "A mix of modern architecture and ancient sites such as the Forbidden City palace complex.", imageUrl: "https://images.pexels.com/photos/241955/pexels-photo-241955.jpeg" },
+    { name: "Bangkok", country: "Thailand", description: "A city of ornate shrines and vibrant street life.", imageUrl: "https://images.pexels.com/photos/373904/pexels-photo-373904.jpeg" },
+    { name: "Dubai", country: "UAE", description: "Known for luxury shopping, ultramodern architecture, and a lively nightlife scene.", imageUrl: "https://images.pexels.com/photos/3787839/pexels-photo-3787839.jpeg" },
+    { name: "Machu Picchu", country: "Peru", description: "An Incan citadel set high in the Andes Mountains in Peru.", imageUrl: "https://images.pexels.com/photos/2929906/pexels-photo-2929906.jpeg" },
+    { name: "Santorini", country: "Greece", description: "One of the Cyclades islands in the Aegean Sea, with its iconic whitewashed, cubiform houses.", imageUrl: "https://images.pexels.com/photos/161852/santorini-greece-travel-holiday-161852.jpeg" },
+    { name: "Serengeti National Park", country: "Tanzania", description: "A vast ecosystem in east-central Africa, famous for its annual migration of over 1.5 million wildebeest.", imageUrl: "https://images.pexels.com/photos/66898/elephant-cub-tsavo-kenya-66898.jpeg" },
+    { name: "Amsterdam", country: "Netherlands", description: "Known for its artistic heritage, elaborate canal system and narrow houses with gabled facades.", imageUrl: "https://images.pexels.com/photos/208709/pexels-photo-208709.jpeg" },
+    { name: "Venice", country: "Italy", description: "A city built on more than 100 small islands in a lagoon in the Adriatic Sea.", imageUrl: "https://images.pexels.com/photos/326709/pexels-photo-326709.jpeg" },
+    { name: "Vancouver", country: "Canada", description: "A bustling west coast seaport in British Columbia, is among Canada’s densest, most ethnically diverse cities.", imageUrl: "https://images.pexels.com/photos/262524/pexels-photo-262524.jpeg" },
 ];
 
 class DestinationCard extends HTMLElement {
