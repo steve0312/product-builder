@@ -1,12 +1,52 @@
 
 const destinations = [
-    { name: "Paris", country: "France", description: "The city of lights, known for its art, fashion, and culture.", imageUrl: "https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { name: "Kyoto", country: "Japan", description: "A city of ancient temples, beautiful gardens, and traditional geishas.", imageUrl: "https://images.pexels.com/photos/161352/japan-kyoto-kinkaku-ji-golden-pavilion-161352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { name: "Bora Bora", country: "French Polynesia", description: "A tropical paradise with crystal-clear waters and overwater bungalows.", imageUrl: "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" },
-    { name: "New York City", country: "USA", description: "The city that never sleeps, with iconic landmarks and endless entertainment.", imageUrl: "https://images.pexels.com/photos/2422588/pexels-photo-2422588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    {
+        name: "Paris",
+        country: "France",
+        description: "The city of lights, known for its art, fashion, and culture.",
+        imageUrl: "https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        features: "Art, Fashion, Culture, Architecture",
+        food: "Croissants, Macarons, French onion soup, Steak frites",
+        places_to_visit: "Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, Montmartre"
+    },
+    {
+        name: "Kyoto",
+        country: "Japan",
+        description: "A city of ancient temples, beautiful gardens, and traditional geishas.",
+        imageUrl: "https://images.pexels.com/photos/161352/japan-kyoto-kinkaku-ji-golden-pavilion-161352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        features: "Temples, Gardens, Geishas, Traditional arts",
+        food: "Kaiseki, Tofu, Sake, Kyoto-style ramen",
+        places_to_visit: "Kiyomizu-dera, Fushimi Inari-taisha, Arashiyama Bamboo Grove, Kinkaku-ji"
+    },
+    {
+        name: "Bora Bora",
+        country: "French Polynesia",
+        description: "A tropical paradise with crystal-clear waters and overwater bungalows.",
+        imageUrl: "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        features: "Tropical paradise, Crystal-clear waters, Overwater bungalows, Coral reefs",
+        food: "Poisson Cru, Tahitian-style barbecue, Coconut bread, Mai Tai cocktails",
+        places_to_visit: "Mount Otemanu, Matira Beach, Coral Gardens, Bora Bora Lagoonarium"
+    },
+    {
+        name: "New York City",
+        country: "USA",
+        description: "The city that never sleeps, with iconic landmarks and endless entertainment.",
+        imageUrl: "https://images.pexels.com/photos/2422588/pexels-photo-2422588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        features: "Iconic landmarks, Endless entertainment, Cultural diversity, Skyscrapers",
+        food: "New York-style pizza, Bagels, Cheesecake, Hot dogs",
+        places_to_visit: "Statue of Liberty, Times Square, Central Park, Empire State Building"
+    },
+    {
+        name: "Seoul",
+        country: "South Korea",
+        description: "A vibrant city where modern technology meets ancient palaces.",
+        imageUrl: "https://images.pexels.com/photos/2376712/pexels-photo-2376712.jpeg",
+        features: "Modern technology, Ancient palaces, K-pop culture, Vibrant nightlife",
+        food: "Korean BBQ, Kimchi, Bibimbap, Tteokbokki",
+        places_to_visit: "Gyeongbokgung Palace, Myeongdong, N Seoul Tower, Bukchon Hanok Village"
+    },
     { name: "Rome", country: "Italy", description: "A city rich in history, with ancient ruins and world-renowned cuisine.", imageUrl: "https://images.pexels.com/photos/1797161/pexels-photo-1797161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
     { name: "Cairo", country: "Egypt", description: "Home to the pyramids and a vibrant culture.", imageUrl: "https://images.pexels.com/photos/3958958/pexels-photo-3958958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { name: "Seoul", country: "South Korea", description: "A vibrant city where modern technology meets ancient palaces.", imageUrl: "https://images.pexels.com/photos/2376712/pexels-photo-2376712.jpeg" },
     { name: "London", country: "UK", description: "A historic city with iconic landmarks like the Tower of London and Buckingham Palace.", imageUrl: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg" },
     { name: "Sydney", country: "Australia", description: "Famous for its harbourfront Sydney Opera House, with a distinctive sail-like design.", imageUrl: "https://images.pexels.com/photos/1878346/pexels-photo-1878346.jpeg" },
     { name: "Rio de Janeiro", country: "Brazil", description: "Known for its sprawling favelas, Carnaval festival, and Christ the Redeemer statue.", imageUrl: "https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg" },
@@ -37,16 +77,16 @@ class DestinationCard extends HTMLElement {
                     overflow: hidden;
                     position: relative;
                     color: white;
-                    height: 250px;
-                    display: flex;
-                    align-items: flex-end;
+                    max-width: 800px;
+                    margin: 1rem auto;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
                 }
                 .card-background {
                     position: absolute;
                     top: 0;
                     left: 0;
                     width: 100%;
-                    height: 100%;
+                    height: 300px;
                     background-size: cover;
                     background-position: center;
                     transition: background-image 0.5s ease-in-out;
@@ -60,25 +100,78 @@ class DestinationCard extends HTMLElement {
                     bottom: 0;
                     background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
                 }
-                .content {
-                    padding: 1.5rem;
+                .main-content {
                     position: relative;
-                    z-index: 1;
+                    padding: 1.5rem;
+                    padding-top: 200px;
                 }
-                h2 {
+                .main-content h2 {
                     margin: 0 0 0.5rem 0;
-                    font-size: 1.8rem;
+                    font-size: 2.2rem;
                 }
-                p {
+                .main-content p {
                     margin: 0;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
+                    max-width: 90%;
+                }
+                .details {
+                    background-color: var(--card-bg-color, #ffffff);
+                    color: var(--text-color, #333);
+                    padding: 1.5rem;
+                }
+                .details h3 {
+                    font-size: 1.5rem;
+                    margin-top: 0;
+                    border-bottom: 2px solid var(--accent-color, #f06);
+                    padding-bottom: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+                .details ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.8rem;
+                }
+                .details li {
+                    background-color: var(--tag-bg-color, #eee);
+                    color: var(--tag-text-color, #333);
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                }
+                .grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 1.5rem;
                 }
             </style>
             <div class="card-background" style="background-image: url('${destination.imageUrl}')"></div>
-            <div class="content">
+            <div class="main-content">
                 <h2>${destination.name}, ${destination.country}</h2>
                 <p>${destination.description}</p>
             </div>
+            ${(destination.features || destination.food || destination.places_to_visit) ? `
+            <div class="details">
+                <div class="grid">
+                    ${destination.features ? `
+                    <div>
+                        <h3>Features</h3>
+                        <ul>${destination.features.split(',').map(item => `<li>${item.trim()}</li>`).join('')}</ul>
+                    </div>` : ''}
+                    ${destination.food ? `
+                    <div>
+                        <h3>Food to Try</h3>
+                        <ul>${destination.food.split(',').map(item => `<li>${item.trim()}</li>`).join('')}</ul>
+                    </div>` : ''}
+                    ${destination.places_to_visit ? `
+                    <div>
+                        <h3>Places to Visit</h3>
+                        <ul>${destination.places_to_visit.split(',').map(item => `<li>${item.trim()}</li>`).join('')}</ul>
+                    </div>` : ''}
+                </div>
+            </div>` : ''}
         `;
     }
 }

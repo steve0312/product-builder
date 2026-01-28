@@ -6,6 +6,10 @@
     --text-color: #333;
     --card-background: #fff;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --card-bg-color: #ffffff;
+    --accent-color: #f06;
+    --tag-bg-color: #eee;
+    --tag-text-color: #333;
 }
 
 body.dark-mode {
@@ -15,6 +19,10 @@ body.dark-mode {
     --text-color: #c9d1d9;
     --card-background: #2d333b;
     --shadow-color: rgba(0, 0, 0, 0.4);
+    --card-bg-color: #2d333b;
+    --accent-color: #f06;
+    --tag-bg-color: #444;
+    --tag-text-color: #eee;
 }
 
 body {
@@ -36,6 +44,8 @@ body {
 main {
     text-align: center;
     padding: 2rem;
+    width: 90%;
+    max-width: 800px;
 }
 
 h1 {
