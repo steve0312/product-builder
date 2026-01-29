@@ -45,21 +45,141 @@ const destinations = [
         food: "Korean BBQ, Kimchi, Bibimbap, Tteokbokki",
         places_to_visit: "Gyeongbokgung Palace, Myeongdong, N Seoul Tower, Bukchon Hanok Village"
     },
-    { name: "Rome", country: "Italy", description: "A city rich in history, with ancient ruins and world-renowned cuisine.", imageUrl: "https://images.pexels.com/photos/1797161/pexels-photo-1797161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { name: "Cairo", country: "Egypt", description: "Home to the pyramids and a vibrant culture.", imageUrl: "https://images.pexels.com/photos/3958958/pexels-photo-3958958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { name: "London", country: "UK", description: "A historic city with iconic landmarks like the Tower of London and Buckingham Palace.", imageUrl: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg" },
-    { name: "Sydney", country: "Australia", description: "Famous for its harbourfront Sydney Opera House, with a distinctive sail-like design.", imageUrl: "https://images.pexels.com/photos/1878346/pexels-photo-1878346.jpeg" },
-    { name: "Rio de Janeiro", country: "Brazil", description: "Known for its sprawling favelas, Carnaval festival, and Christ the Redeemer statue.", imageUrl: "https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg" },
-    { name: "Moscow", country: "Russia", description: "Home to the Kremlin, Red Square, and St. Basil's Cathedral's colorful domes.", imageUrl: "https://images.pexels.com/photos/2363/moscow-russia-red-square-kremlin.jpg" },
-    { name: "Beijing", country: "China", description: "A mix of modern architecture and ancient sites such as the Forbidden City palace complex.", imageUrl: "https://images.pexels.com/photos/241955/pexels-photo-241955.jpeg" },
-    { name: "Bangkok", country: "Thailand", description: "A city of ornate shrines and vibrant street life.", imageUrl: "https://images.pexels.com/photos/373904/pexels-photo-373904.jpeg" },
-    { name: "Dubai", country: "UAE", description: "Known for luxury shopping, ultramodern architecture, and a lively nightlife scene.", imageUrl: "https://images.pexels.com/photos/3787839/pexels-photo-3787839.jpeg" },
-    { name: "Machu Picchu", country: "Peru", description: "An Incan citadel set high in the Andes Mountains in Peru.", imageUrl: "https://images.pexels.com/photos/2929906/pexels-photo-2929906.jpeg" },
-    { name: "Santorini", country: "Greece", description: "One of the Cyclades islands in the Aegean Sea, with its iconic whitewashed, cubiform houses.", imageUrl: "https://images.pexels.com/photos/161852/santorini-greece-travel-holiday-161852.jpeg" },
-    { name: "Serengeti National Park", country: "Tanzania", description: "A vast ecosystem in east-central Africa, famous for its annual migration of over 1.5 million wildebeest.", imageUrl: "https://images.pexels.com/photos/66898/elephant-cub-tsavo-kenya-66898.jpeg" },
-    { name: "Amsterdam", country: "Netherlands", description: "Known for its artistic heritage, elaborate canal system and narrow houses with gabled facades.", imageUrl: "https://images.pexels.com/photos/208709/pexels-photo-208709.jpeg" },
-    { name: "Venice", country: "Italy", description: "A city built on more than 100 small islands in a lagoon in the Adriatic Sea.", imageUrl: "https://images.pexels.com/photos/326709/pexels-photo-326709.jpeg" },
-    { name: "Vancouver", country: "Canada", description: "A bustling west coast seaport in British Columbia, is among Canada’s densest, most ethnically diverse cities.", imageUrl: "https://images.pexels.com/photos/262524/pexels-photo-262524.jpeg" },
+    {
+        name: "Rome",
+        country: "Italy",
+        description: "A city rich in history, with ancient ruins and world-renowned cuisine.",
+        imageUrl: "https://images.pexels.com/photos/1797161/pexels-photo-1797161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        features: "Ancient ruins, Renaissance art, Piazzas, Vatican City",
+        food: "Carbonara, Cacio e pepe, Suppli, Gelato",
+        places_to_visit: "Colosseum, Roman Forum, Pantheon, Vatican Museums"
+    },
+    {
+        name: "Cairo",
+        country: "Egypt",
+        description: "Home to the pyramids and a vibrant culture.",
+        imageUrl: "https://images.pexels.com/photos/3958958/pexels-photo-3958958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        features: "Ancient history, Bustling markets, Nile River, Islamic architecture",
+        food: "Koshari, Ful medames, Shawarma, Basbousa",
+        places_to_visit: "Giza Pyramids, Egyptian Museum, Khan el-Khalili, Al-Azhar Mosque"
+    },
+    {
+        name: "London",
+        country: "UK",
+        description: "A historic city with iconic landmarks like the Tower of London and Buckingham Palace.",
+        imageUrl: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg",
+        features: "Historic landmarks, Royal palaces, West End theatre, River Thames",
+        food: "Fish and chips, Sunday roast, Meat pies, Afternoon tea",
+        places_to_visit: "Tower of London, Buckingham Palace, British Museum, Tower Bridge"
+    },
+    {
+        name: "Sydney",
+        country: "Australia",
+        description: "Famous for its harbourfront Sydney Opera House, with a distinctive sail-like design.",
+        imageUrl: "https://images.pexels.com/photos/1878346/pexels-photo-1878346.jpeg",
+        features: "Harbor city, Beach culture, Coastal hikes, Outdoor lifestyle",
+        food: "Meat pies, Barramundi, Flat white, Pavlova",
+        places_to_visit: "Sydney Opera House, Harbour Bridge, Bondi Beach, The Rocks"
+    },
+    {
+        name: "Rio de Janeiro",
+        country: "Brazil",
+        description: "Known for its sprawling favelas, Carnaval festival, and Christ the Redeemer statue.",
+        imageUrl: "https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg",
+        features: "Carnaval culture, Mountain views, Beach life, Samba music",
+        food: "Feijoada, Pao de queijo, Brigadeiro, Caipirinha",
+        places_to_visit: "Christ the Redeemer, Sugarloaf Mountain, Copacabana Beach, Selaron Steps"
+    },
+    {
+        name: "Moscow",
+        country: "Russia",
+        description: "Home to the Kremlin, Red Square, and St. Basil's Cathedral's colorful domes.",
+        imageUrl: "https://images.pexels.com/photos/2363/moscow-russia-red-square-kremlin.jpg",
+        features: "Imperial history, Monumental architecture, Ballet and arts, Metro stations",
+        food: "Borscht, Pelmeni, Blini, Beef Stroganoff",
+        places_to_visit: "Red Square, Kremlin, St. Basil's Cathedral, Bolshoi Theatre"
+    },
+    {
+        name: "Beijing",
+        country: "China",
+        description: "A mix of modern architecture and ancient sites such as the Forbidden City palace complex.",
+        imageUrl: "https://images.pexels.com/photos/241955/pexels-photo-241955.jpeg",
+        features: "Imperial palaces, Hutong alleys, Modern skyline, Cultural heritage",
+        food: "Peking duck, Zhajiangmian, Jianbing, Hot pot",
+        places_to_visit: "Forbidden City, Temple of Heaven, Summer Palace, Great Wall at Mutianyu"
+    },
+    {
+        name: "Bangkok",
+        country: "Thailand",
+        description: "A city of ornate shrines and vibrant street life.",
+        imageUrl: "https://images.pexels.com/photos/373904/pexels-photo-373904.jpeg",
+        features: "Riverside temples, Night markets, Tuk-tuks, Modern malls",
+        food: "Pad thai, Tom yum, Mango sticky rice, Som tam",
+        places_to_visit: "Grand Palace, Wat Pho, Wat Arun, Chatuchak Market"
+    },
+    {
+        name: "Dubai",
+        country: "UAE",
+        description: "Known for luxury shopping, ultramodern architecture, and a lively nightlife scene.",
+        imageUrl: "https://images.pexels.com/photos/3787839/pexels-photo-3787839.jpeg",
+        features: "Skyscrapers, Desert landscapes, Luxury shopping, Waterfront promenades",
+        food: "Shawarma, Machboos, Manakish, Luqaimat",
+        places_to_visit: "Burj Khalifa, Dubai Mall, Palm Jumeirah, Dubai Creek"
+    },
+    {
+        name: "Machu Picchu",
+        country: "Peru",
+        description: "An Incan citadel set high in the Andes Mountains in Peru.",
+        imageUrl: "https://images.pexels.com/photos/2929906/pexels-photo-2929906.jpeg",
+        features: "Ancient Inca ruins, Mountain vistas, Sacred Valley, Hiking trails",
+        food: "Ceviche, Lomo saltado, Aji de gallina, Quinoa dishes",
+        places_to_visit: "Machu Picchu Citadel, Sun Gate, Huayna Picchu, Sacred Valley"
+    },
+    {
+        name: "Santorini",
+        country: "Greece",
+        description: "One of the Cyclades islands in the Aegean Sea, with its iconic whitewashed, cubiform houses.",
+        imageUrl: "https://images.pexels.com/photos/161852/santorini-greece-travel-holiday-161852.jpeg",
+        features: "Caldera views, Whitewashed villages, Sunset scenery, Volcanic beaches",
+        food: "Greek salad, Fava, Souvlaki, Baklava",
+        places_to_visit: "Oia, Fira, Akrotiri, Red Beach"
+    },
+    {
+        name: "Serengeti National Park",
+        country: "Tanzania",
+        description: "A vast ecosystem in east-central Africa, famous for its annual migration of over 1.5 million wildebeest.",
+        imageUrl: "https://images.pexels.com/photos/66898/elephant-cub-tsavo-kenya-66898.jpeg",
+        features: "Great Migration, Safari wildlife, Savanna plains, Big cats",
+        food: "Nyama choma, Ugali, Pilau, Mandazi",
+        places_to_visit: "Seronera Valley, Grumeti River, Lobo Valley, Naabi Hill Gate"
+    },
+    {
+        name: "Amsterdam",
+        country: "Netherlands",
+        description: "Known for its artistic heritage, elaborate canal system and narrow houses with gabled facades.",
+        imageUrl: "https://images.pexels.com/photos/208709/pexels-photo-208709.jpeg",
+        features: "Canal rings, Cycling culture, Art museums, Historic townhouses",
+        food: "Stroopwafels, Bitterballen, Poffertjes, Herring",
+        places_to_visit: "Rijksmuseum, Anne Frank House, Van Gogh Museum, Jordaan"
+    },
+    {
+        name: "Venice",
+        country: "Italy",
+        description: "A city built on more than 100 small islands in a lagoon in the Adriatic Sea.",
+        imageUrl: "https://images.pexels.com/photos/326709/pexels-photo-326709.jpeg",
+        features: "Canals and bridges, Gothic palaces, Lagoon views, Carnival traditions",
+        food: "Cicchetti, Risotto al nero, Sarde in saor, Tiramisu",
+        places_to_visit: "St. Mark's Basilica, Doge's Palace, Rialto Bridge, Grand Canal"
+    },
+    {
+        name: "Vancouver",
+        country: "Canada",
+        description: "A bustling west coast seaport in British Columbia, is among Canada's densest, most ethnically diverse cities.",
+        imageUrl: "https://images.pexels.com/photos/262524/pexels-photo-262524.jpeg",
+        features: "Coastal mountains, Urban parks, Seawall cycling, Multicultural dining",
+        food: "Salmon, Japadog, Sushi, Nanaimo bars",
+        places_to_visit: "Stanley Park, Granville Island, Capilano Suspension Bridge, Grouse Mountain"
+    },
 ];
 
 class DestinationCard extends HTMLElement {
